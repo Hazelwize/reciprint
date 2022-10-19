@@ -1,23 +1,25 @@
-import logo from './logo.svg';
+import {useState,useEffect} from 'react'
+import Header from './components/Header'
+import IngredientList from './components/IngredientList'
+import Recipe from './components/Recipe'
+import NewRecipe from './components/NewRecipe'
 import './App.css';
 
+
 function App() {
+  const recipe = {
+    name: 'bread',
+    type: 'bake',
+    ingredients: [['1/3c','all purpose flour'],['1/2c','brown sugar'], ['1/2c','unsalted butter'],['2 tsp','baking powder']],
+    cookTime: 60,
+    directions:['preheat oven','mix all ingledients', 'pour in hotwok', "cook til' satisfy"],
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <NewRecipe />
+      <Recipe recipe={recipe}/>
+      
     </div>
   );
 }
