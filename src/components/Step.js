@@ -1,7 +1,7 @@
 const Step = ({step}) => {
     return(
         <li>
-            <span>{step} </span>
+            <p>{step} </p>
         </li>
     )
 }

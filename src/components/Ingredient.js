@@ -1,9 +1,9 @@
 const Ingredient = ({ingredient}) => {
-    const [quantity, name] = ingredient
+    const {qty, item} = ingredient
     return(
         <li>
-            <span>{quantity} </span>
-            <span>{name}</span>
+            <span>{qty} </span>
+            <span>{item}</span>
         </li>
     )
 }

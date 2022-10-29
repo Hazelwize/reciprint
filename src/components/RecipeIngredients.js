@@ -27,7 +27,7 @@ const RecipeIngredients = () => {
                 </thead>
                 <tbody>
                     {ingredients.map(( _ , i ) => 
-                        <tr>
+                        <tr key={i}>
                             <td key={`${i}qty`}>{ingredients[i].qty}</td>
                             <td key={`${i}item`}>{ingredients[i].item}</td>
                         </tr>
