@@ -24,9 +24,9 @@ const RecipeDirections = () => {
                     </li>
                 )}
             </ol>
-            <form onSubmit={addDirections}>
+            <form onSubmit={(e) => addDirections(e)}>
                 <label>Step<textarea value={step} onChange={(event)=>setStep(event.target.value)}></textarea></label>
-                <button type="submit">Add Another</button>
+                <button type="submit">Add</button>
             </form>  
            
         </section>

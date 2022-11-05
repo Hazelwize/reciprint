@@ -7,7 +7,7 @@ const Steps = ({directions}) => {
                 <h3>Directions</h3>
             </div>
             <ol>
-                {directions.map((step,i) =>(
+                {directions != null && directions.map((step,i) =>(
                     <Step key={i} step={step}/>
                 ))}
             </ol>
