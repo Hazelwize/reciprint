@@ -1,15 +1,21 @@
 import IngredientList from './IngredientList'
 import Steps from './Steps'
 
-const Recipe = ({recipe}) => {
+const Recipe = ({recipe, index, deleteRecipe}) => {
     const {name,ingredients,directions} = recipe
 
     return (
         <section className='recipeCard'>
-            <h2>{name}</h2>
-            <IngredientList className='ingredList' ingredients={ingredients}/>
-            <Steps directions={directions}/>
+            <button className='deleteIcon'type="button" onClick={() => deleteRecipe(index)}>x</button>
+            <h2 className='recipeName'>{name}</h2>
+            
+            <div className="recipeBody">
+                <IngredientList  ingredients={ingredients}/>
+                <Steps directions={directions}/>
+            </div>
+            
         </section>
+    
     )
 }
 

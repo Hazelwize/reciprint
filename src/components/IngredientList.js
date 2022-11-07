@@ -2,11 +2,11 @@ import Ingredient from './Ingredient'
 
 const IngredientList = ({ingredients}) => {
     return (
-        <section>
+        <section className='ingredList'>
             <div>
-                <h3>Ingredients</h3>
+                <h3 className="recipeName">Ingredients</h3>
             </div>
-            <ul>
+            <ul className="ingred">
                 {ingredients.map((ingredient,i) =>(
                     <Ingredient key={i} className="ingred" ingredient={ingredient}/>
                 ))}

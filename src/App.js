@@ -11,15 +11,14 @@ function App() {
   // const [recipe, setRecipe] = useState(async() => await JSON.parse(window.localStorage.getItem('recipe')) || {})
   const [recipes, setRecipes] = useState(() => JSON.parse(window.localStorage.getItem('recipes'))|| [])
   
-  
-  // useEffect(() =>{
-  //   const getRecipes = async () => {
-  //     const recipesFromStorage = JSON.parse(window.localStorage.getItem(recipes))
-  //     setRecipes(recipesFromStorage)
-  //   }
-    
-  //   getRecipes()
-  // }, [recipes])
+  useEffect( () => {
+    window.localStorage.setItem('recipes', JSON.stringify(recipes))
+    },[recipes]
+  )
+
+  const deleteOne = (key) => {
+    setRecipes(recipes.filter((e,i) => i !== key))
+  }
   async function makeRecipe(){
     try{
         const name = window.localStorage.getItem('name')
@@ -47,11 +46,12 @@ function App() {
     <div className="App">
       <Header/>
       <NewRecipe formSubmit={makeRecipe}/>
-      <ul>
+      <ul className='recipeList'>
         {recipes.map((el,i) => 
             <li key={i}>
-              <Recipe recipe={el}/>
+              <Recipe recipe={el} index={i} deleteRecipe={deleteOne}/>
             </li> 
+            
         )}
       </ul>
     </div>

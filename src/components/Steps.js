@@ -2,9 +2,9 @@ import Step from './Step'
 
 const Steps = ({directions}) => {
     return (
-        <section>
+        <section className="directionsList">
             <div>
-                <h3>Directions</h3>
+                <h3 className="recipeName">Directions</h3>
             </div>
             <ol>
                 {directions != null && directions.map((step,i) =>(

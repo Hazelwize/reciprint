@@ -15,6 +15,9 @@ const RecipeIngredients = () => {
         setItem('')
         setQty('')
     }
+    const deleteOne = (key) => {
+        setIngredient( ingredients.filter((e,i) => i !== key))
+    }
     return (
         <section className="center">
             <h2>Add your Ingredients: </h2>
@@ -30,15 +33,16 @@ const RecipeIngredients = () => {
                         <tr key={i}>
                             <td key={`${i}qty`}>{ingredients[i].qty}</td>
                             <td key={`${i}item`}>{ingredients[i].item}</td>
+                            <button key={i} onClick={() => deleteOne(i)}>-</button>
                         </tr>
                     )}
                 </tbody>
             </table>
            
             <form onSubmit={addIngredient}>
-                <label>Qty<input value={quantity} onChange={(event)=>setQty(event.target.value)}></input></label>
-                <label>Item<input value={item} onChange={(event)=>setItem(event.target.value)}></input></label>
-                <button type="submit">Add Another</button>
+                <label>Qty<input className="recipeInputs" value={quantity} onChange={(event)=>setQty(event.target.value)}></input></label>
+                <label>Item<input className="recipeInputs" value={item} onChange={(event)=>setItem(event.target.value)}></input></label>
+                <button className="btn" type="submit">+</button>
             </form>
             
             
