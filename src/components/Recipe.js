@@ -1,8 +1,12 @@
 import IngredientList from './IngredientList'
 import Steps from './Steps'
+import QRCode from './QRCode'
+import {useState} from 'react'
 
 const Recipe = ({recipe, index, deleteRecipe}) => {
+    const [share, setShare] = useState(false)
     const {name,ingredients,directions} = recipe
+
 
     return (
         <section className='recipeCard'>
@@ -13,6 +17,8 @@ const Recipe = ({recipe, index, deleteRecipe}) => {
                 <IngredientList  ingredients={ingredients}/>
                 <Steps directions={directions}/>
             </div>
+            {share && <QRCode recipe={recipe}/>}
+            <button type="button" onClick={() => {setShare(!share)}}>Share</button>
             
         </section>
     

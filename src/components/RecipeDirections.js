@@ -1,9 +1,11 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useRef} from 'react';
+
 
 const RecipeDirections = () => {
     const [step, setStep] = useState(() => JSON.parse(window.localStorage.getItem('step')) || "")
     const [directions, setDirections] = useState(() => JSON.parse(window.localStorage.getItem('directions')) || [])
 
+    const inputRef = useRef()
     useEffect( () => {
         window.localStorage.setItem('directions', JSON.stringify(directions))
         },[directions]
@@ -15,6 +17,7 @@ const RecipeDirections = () => {
         event.preventDefault()
         setDirections([...directions, step])
         setStep('')
+        inputRef.current?.focus()
     }
 
     return(
@@ -29,7 +32,7 @@ const RecipeDirections = () => {
                 )}
             </ol>
             <form onSubmit={(e) => addDirections(e)}>
-                <label>Step<textarea className="textareaInput" value={step} onChange={(event)=>setStep(event.target.value)}></textarea></label>
+                <label>Step<textarea ref={inputRef} className="textareaInput" value={step} onChange={(event)=>setStep(event.target.value)}></textarea></label>
                 <button className="btn" type="submit">+</button>
             </form>  
            

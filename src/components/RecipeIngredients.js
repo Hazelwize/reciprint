@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 
 const RecipeIngredients = () => {
     const [quantity, setQty] = useState('')
@@ -9,15 +9,19 @@ const RecipeIngredients = () => {
         window.localStorage.setItem('ingredients', JSON.stringify(ingredients))
     },[ingredients])
 
+    const inputRef = useRef()
+
     const addIngredient = (event) => {
         event.preventDefault()
         setIngredient([...ingredients, {qty: quantity, item: item}])
         setItem('')
         setQty('')
+        inputRef.current?.focus()  
     }
     const deleteOne = (key) => {
         setIngredient( ingredients.filter((e,i) => i !== key))
     }
+
     return (
         <section className="center">
             <h2>Add your Ingredients: </h2>
@@ -40,8 +44,16 @@ const RecipeIngredients = () => {
             </table>
            
             <form onSubmit={addIngredient}>
-                <label>Qty<input className="recipeInputs" value={quantity} onChange={(event)=>setQty(event.target.value)}></input></label>
-                <label>Item<input className="recipeInputs" value={item} onChange={(event)=>setItem(event.target.value)}></input></label>
+                <label>Qty<input 
+                    className="recipeInputs" 
+                    value={quantity}    
+                    onChange={(event)=>setQty(event.target.value)} 
+                    ref={inputRef}></input></label>
+                <label>Item<input
+                    className="recipeInputs" 
+                    value={item} 
+                    onChange={(event)=>setItem(event.target.value)}>
+                            </input></label>
                 <button className="btn" type="submit">+</button>
             </form>
             
