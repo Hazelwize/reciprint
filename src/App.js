@@ -1,8 +1,10 @@
 import React from 'react'
 import {useState,useEffect} from 'react'
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 import Header from './components/Header'
 import Recipe from './components/Recipe'
 import NewRecipe from './components/NewRecipe'
+import RecipeDownload from './components/RecipeDownload'
 import './App.css';
 
 
@@ -43,18 +45,26 @@ function App() {
   }
   console.log(recipes)
   return (
-    <div className="App">
-      <Header/>
-      <NewRecipe formSubmit={makeRecipe}/>
-      <ul className='recipeList'>
-        {recipes.map((el,i) => 
-            <li key={i}>
-              <Recipe recipe={el} index={i} deleteRecipe={deleteOne}/>
-            </li> 
-            
-        )}
-      </ul>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route path='/' element={
+            <div className="App">
+              <Header/>
+              <NewRecipe formSubmit={makeRecipe}/>
+              <ul className='recipeList'>
+                {recipes.map((el,i) => 
+                    <li key={i}>
+                      <Recipe recipe={el} index={i} deleteRecipe={deleteOne}/>
+                    </li> 
+                )}
+              </ul>
+            </div>
+          }/>
+          <Route path='/addRecipe/:recipe' element={<RecipeDownload />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
