@@ -31,9 +31,10 @@ const RecipeDirections = () => {
                     </li>
                 )}
             </ol>
-            <form onSubmit={(e) => addDirections(e)}>
-                <label>Step<textarea ref={inputRef} className="textareaInput" value={step} onChange={(event)=>setStep(event.target.value)}></textarea></label>
-                <button className="btn" type="submit">+</button>
+            <form className="ingredForm" onSubmit={(e) => addDirections(e)}>
+                <label>Add each step:</label>
+                    <textarea ref={inputRef} className="textareaInput" value={step} onChange={(event)=>setStep(event.target.value)}></textarea>
+                <button className="center btn" type="submit">+</button>
             </form>  
            
         </section>

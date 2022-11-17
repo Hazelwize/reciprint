@@ -13,7 +13,6 @@ function App() {
   // const [recipe, setRecipe] = useState(async() => await JSON.parse(window.localStorage.getItem('recipe')) || {})
   const [recipes, setRecipes] = useState(() => JSON.parse(window.localStorage.getItem('recipes'))|| [])
   const [newForm, setNewForm] = useState(false);
-  
   useEffect( () => {
     window.localStorage.setItem('recipes', JSON.stringify(recipes))
     },[recipes]
@@ -52,7 +51,7 @@ function App() {
           <Route path='/' element={
             <div className="App">
               <Header/>
-              <button className="addBtn shareBtn" type='button' onClick={() => setNewForm(!newForm)}>Add New Recipe</button>
+              <button className="addBtn shareBtn" type='button' onClick={() => setNewForm(!newForm)}>{newForm ? "Hide Recipe Maker" : 'Add New Recipe'}</button>
               {newForm && <NewRecipe formSubmit={makeRecipe}/>}
               <ul className='recipeList'>
                 {recipes.map((el,i) => 

@@ -52,9 +52,9 @@ const NewRecipe = ({formSubmit}) => {
             {page === 0 && <RecipeName />}
             {page === 1 && <RecipeIngredients />}
             {page === 2 && <RecipeDirections />}
-            {page > 0 && <button className="btn" type="button" onClick={() => prevPage()} >Back</button>}
-            {page < 2 && <button className="btn" type="button" onClick={() => nextPage()}>Next</button>}
-            {page === 2 && <button className="btn" type='button' onClick={() => handleSubmit()}>Finish</button>}
+            {page > 0 && <button className="btn navBtn" type="button" onClick={() => prevPage()} >Back</button>}
+            {page < 2 && <button className="btn navBtn" type="button" onClick={() => nextPage()}>Next</button>}
+            {page === 2 && <button className="btn navBtn" type='button' onClick={() => handleSubmit()}>Finish</button>}
         </div>
     
     )

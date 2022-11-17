@@ -23,7 +23,7 @@ const RecipeIngredients = () => {
     }
 
     return (
-        <section className="center">
+        <section className="ingredTable center">
             <h2 className="recipeName">Add your Ingredients: </h2>
             <table className='center'>
                 <thead>
@@ -43,18 +43,23 @@ const RecipeIngredients = () => {
                 </tbody>
             </table>
            
-            <form onSubmit={addIngredient}>
-                <label>Qty<input 
-                    className="recipeInputs" 
-                    value={quantity}    
-                    onChange={(event)=>setQty(event.target.value)} 
-                    ref={inputRef}></input></label>
-                <label>Item<input
-                    className="recipeInputs" 
-                    value={item} 
-                    onChange={(event)=>setItem(event.target.value)}>
-                            </input></label>
-                <button className="btn" type="submit">+</button>
+            <form className="ingredForm" onSubmit={addIngredient}>
+                <section className="inputContainer">
+                    <label className="inputLabel">Qty</label>
+                    <input 
+                        className="recipeInputs center" 
+                        value={quantity}    
+                        onChange={(event)=>setQty(event.target.value)} 
+                        ref={inputRef}></input>
+                    <label className="recipeLabel">Item</label>
+                    <input
+                        className="recipeInputs center" 
+                        value={item} 
+                        onChange={(event)=>setItem(event.target.value)}>
+                    </input>
+                </section>
+                
+                <button className="center btn" type="submit">+</button>
             </form>
             
             
