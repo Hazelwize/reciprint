@@ -22,7 +22,7 @@ const RecipeDirections = () => {
 
     return(
         <section className="center">
-            <h2>Add your Directions: </h2>
+            <h2 className="recipeName">Add your Directions: </h2>
             <ol>
                 {directions.map(( step , i ) => 
                     <li className='stepsList'key={i}>

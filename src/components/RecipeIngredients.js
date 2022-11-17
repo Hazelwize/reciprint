@@ -24,12 +24,12 @@ const RecipeIngredients = () => {
 
     return (
         <section className="center">
-            <h2>Add your Ingredients: </h2>
+            <h2 className="recipeName">Add your Ingredients: </h2>
             <table className='center'>
                 <thead>
                     <tr>
-                        <th>Quantity</th>
-                        <th>Item</th>
+                        <th className="recipeName">Quantity</th>
+                        <th className="recipeName">Item</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -8,7 +8,7 @@ const RecipeName = () => {
     },[name])
     return (
         <section>
-            <h2>Name your recipe:</h2>
+            <h2 className="recipeName">Name your recipe:</h2>
             <input className="recipeInputs" value={name} onChange={(event) => setName(event.target.value)}></input>
         </section>
     )

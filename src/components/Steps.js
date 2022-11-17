@@ -6,7 +6,7 @@ const Steps = ({directions}) => {
             <div>
                 <h3 className="recipeName">Directions</h3>
             </div>
-            <ol>
+            <ol className="orderedSteps">
                 {directions != null && directions.map((step,i) =>(
                     <Step key={i} step={step}/>
                 ))}

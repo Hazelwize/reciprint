@@ -54,12 +54,22 @@ table {
   gap: 30px;
 }
 body{
+  background:#46494C;
   text-align: center;
   font-style: 24px;
+  color: #DCDCDD;
+  font-size: 16px;
+  font-family: 'Sono', sans-serif;
 }
+
+/* #DCDCDD main
+#C5C3C6 mid- main
+#46494C dark - main
+#4C5C68 dark-accent
+#1985A1 light-accent*/
 .title{
   font-size: 35px;
-  font-style: bold;
+  font-weight: 700;
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -67,31 +77,38 @@ body{
   margin: 0 auto;
   width: 600px;
   height: auto;
-  border: 4px solid black;
+  border: 5px dashed #C5C3C6;
+  box-shadow: 3px 3px 3px 3px rgba(0,0,0,.4);
+  background:#1985A1;
   border-radius: 25px;
   padding: 15px;
 }
 
 .recipeBody{
   display: flex;
+  border-radius: 20px;
+  padding: 20px;
   justify-content: space-around;
+  background: #4C5C68;
+  margin-bottom: 20px;
   gap: 20px;
 }
 .recipeName{
-  padding: 5px;
-  font-style: bold;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-shadow: 2px 4px 3px rgba(0,0,0,.4);
+  font-weight: 700;
   font-size: 24px;
   text-decoration: underline;
 }
 .ingredList{
   text-align: left;
-  border: 2px solid black;
-  width: 30%;
+  width: 40%;
 }
 .directionsList{
-  width: 70%;
+  width: 60%;
   list-style-type: decimal;
-  border: 2px solid black;
+  border-left: 5px solid #C5C3C6;
 }
 .recipeList{
   margin: 0 auto;
@@ -100,24 +117,48 @@ body{
   display: flex;
   flex-wrap: wrap;
   width: 70%;
+  gap: 40px;
   list-style-type: none;
 }
 
 .recipeForm{
   width: 600px;
-  background: gray;
+  background: #4C5C68;
   border: 2px solid black;
   margin: 0 auto;
   padding: 30px;
+}
+.orderedSteps{
+  display: flex;
+  flex-direction: column;
+  list-style-type: decimal;
+  /* list-style-position: inside; */
+  gap: 18px;
+  padding-left: 50px;
+  text-align: left;
+}
+.orderedSteps p{
+  transform: translateX(-8px);
+  line-height: 25px;
+}
+.shareBtn{
+  padding: 5px 15px;
+  font-size: 20px;
+  font-weight: bold;
+  background:#4C5C68;
+  color: #DCDCDD;
+  border: 2px solid #C5C3C6;
+  border-radius: 30px;
+  box-shadow: 2px 2px 2px rgba(0,0,0,.3);
 }
 
 .btn{
   padding: 5px 15px;
   font-size: 20px;
   font-weight: bold;
-  background: rgb(63, 2, 63);
-  color: white;
-  border: 2px solid rgb(48, 0, 48);
+  background:#1985A1;
+  color: #DCDCDD;
+  border: 2px solid #C5C3C6;
   border-radius: 30px;
 }
 .recipeInputs{
@@ -135,6 +176,10 @@ body{
 }
 .ingred{
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 20px;
   text-align: left;
   padding: none;
 }
@@ -153,12 +198,17 @@ body{
 }
 .deleteIcon{
   float: right;
-  border-radius: 20px;
-  border: 1px solid black;
+  border-radius: 50%;
+  border: 2px solid #C5C3C6;
   font-size: 18px;
-  padding: 0 8px;
-  color: white;
+  font-weight: 700;
+  padding: 3px 10px;
+  color:#C5C3C6;
   background:rgb(129, 1, 1);
+}
+.addBtn{
+  width: 20%;
+  margin: 0 auto;
 }
 
 

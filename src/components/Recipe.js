@@ -18,7 +18,7 @@ const Recipe = ({recipe, index, deleteRecipe}) => {
                 <Steps directions={directions}/>
             </div>
             {share && <QRCode recipe={recipe}/>}
-            <button type="button" onClick={() => {setShare(!share)}}>Share</button>
+            <button className="shareBtn"type="button" onClick={() => {setShare(!share)}}>Share</button>
             
         </section>
     
