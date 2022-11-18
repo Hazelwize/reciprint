@@ -1,15 +1,20 @@
-import {useParams, Navigate, useNavigate, useLocation} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import {useEffect, useState} from 'react'
 
-const RecipeDownload = () => {
+const RecipeDownload = ({onLoad}) => {
     const [loading, setLoading] = useState(true)
     const params = useParams()
-    const navigate = useNavigate()
+
+
+    // const underscoreToSpaces = (str) => {
+    //     return str.replaceAll('_',' ');
+    // }
 
     useEffect(() => {
         const addRecipe = async(newRecipe) => {
             try{
                 let recipes = await JSON.parse(window.localStorage.getItem('recipes'))
+                // const hashLink = underscoreToSpaces(newRecipe)
                 newRecipe = await JSON.parse(newRecipe)
                 await window.localStorage.setItem('recipes', JSON.stringify([...recipes, newRecipe]))
             }
@@ -17,15 +22,15 @@ const RecipeDownload = () => {
                 console.log(err)
             }
         }
-        addRecipe(params.recipe)
+        addRecipe(params.recipe)        
         setLoading(false)
     })
     return loading ? (
         <h3>Loading...</h3>
     ) : (
         <>
-            <h1>Your Recipe Was Added!</h1>
-            <button type="button" onClick={() => navigate(-1)}> Go back! </button>
+            <h1 className="addedRec">Your Recipe Was Added!</h1>
+            <Link onClick={() => onLoad()} className="btn" to="/"> Go Back! </Link>
         </>
     )
 }

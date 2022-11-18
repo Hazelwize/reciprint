@@ -17,6 +17,10 @@ function App() {
     window.localStorage.setItem('recipes', JSON.stringify(recipes))
     },[recipes]
   )
+  
+  const handleLoad = () => {
+    setRecipes(JSON.parse(window.localStorage.getItem('recipes')))
+  }
 
   const deleteOne = (key) => {
     setRecipes(recipes.filter((e,i) => i !== key))
@@ -62,7 +66,7 @@ function App() {
               </ul>
             </div>
           }/>
-          <Route path='/addRecipe/:recipe' element={<RecipeDownload />} />
+          <Route path='/addRecipe/:recipe' element={<RecipeDownload onLoad={handleLoad} />} />
         </Routes>
       </div>
     </Router>

@@ -104,6 +104,7 @@ body{
   font-size: 24px;
   text-decoration: underline;
 }
+
 .ingredList{
   text-align: left;
   width: 40%;
@@ -242,6 +243,9 @@ body{
 .addBtn{
   width: 20%;
   margin: 0 auto;
+}
+.addedRec{
+  margin: 30px auto;
 }
 
 
