@@ -9,7 +9,8 @@ const QRCode = ({recipe}) => {
                 console.log(recipe)
                 const recipeData = await JSON.stringify(recipe)
                 // const hashLink = spaceToUnderscore(recipeData)
-                let qrlink = encodeURIComponent(`http://reciprint.netlify.app/addRecipe/${recipeData}`)
+                // http://reciprint.netlify.app
+                const qrlink = `http://reciprint.netlify.app/addRecipe/${recipeData}`
                 const res = await fetch(`https://api.qrserver.com/v1/create-qr-code/?data=${qrlink}&size=400x400`)
                 console.log(res)
                 setCode(res.url)
@@ -18,8 +19,7 @@ const QRCode = ({recipe}) => {
             catch(err){
                 console.log(err)
             } 
-        }
-        
+        } 
         fetchQR()
     },[recipe])
     // const spaceToUnderscore = (str) =>{

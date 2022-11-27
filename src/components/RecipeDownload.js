@@ -13,6 +13,7 @@ const RecipeDownload = ({onLoad}) => {
     useEffect(() => {
         const addRecipe = async(newRecipe) => {
             try{
+                console.log(newRecipe)
                 let recipes = await JSON.parse(window.localStorage.getItem('recipes'))
                 // const hashLink = underscoreToSpaces(newRecipe)
                 newRecipe = await JSON.parse(newRecipe)
