@@ -248,5 +248,91 @@ body{
   margin: 30px auto;
 }
 
+@media screen and (max-width: 800px){
+  .App{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .addBtn{
+    width: 40%;
+  }
+  .recipeForm{
+    width: 80%;
+  }
+  .navBtn{
+    width: 50%;
+  }
+  .inputContainer{
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .recipeInputs{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .recipeList{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .recipeCard{
+    width: auto;
+  }
+
+}
+
+@media screen and (max-width: 575px){
+  .recipeName{
+    font-size: 18px;
+  }
+  .ingred span{
+    font-size: 14px;
+    
+  }
+  .ingredList{
+    width: 100%;
+  }
+  .orderedSteps p{
+    font-size: 14px;
+  }
+  .addBtn, .shareBtn, .navBtn, .btn{
+    font-size: 16px;
+    width: 80%;
+  }
+  .recipeForm{
+    padding: 10px;
+    width: 90%;
+    
+  }
+  img{
+    width: 80%;
+  }
+  .recipeCard{
+    padding: 5px;
+  }
+  table{
+    font-size: 14px;
+  }
+  .recipeInputs{
+    font-size: 14px;
+  }
+  .recipeList li{
+    width: 100%;
+  }
+  .recipeBody{
+    flex-direction: column;
+  }
+  .directionsList{
+    border: none;
+    width: 100%;
+  }
+  .orderedSteps{
+    padding-left: 16px;
+  }
+}
+
 
 
