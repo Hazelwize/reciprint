@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# ReciPrint 
+ReciPrint is a way to share recipes through QR codes. Add your ingredients, directions, and steps to create a recipe. Click the share button to generate a QR code for sharing your creation.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Link to project:** https://reciprint.netlify.app/
 
-## Available Scripts
+![reciprint image](https://user-images.githubusercontent.com/97214996/204382940-15bbbd9d-2b7d-477f-bbef-c28a4a630a08.png)
 
-In the project directory, you can run:
+## How It's Made:
 
-### `npm start`
+**Tech used:** React, HTML, CSS, JavaScript
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I started making ReciPrint with the goal of making it 100% front-end. Adding a database with authentication would have made this a lot easier to work with, but instead I used local storage to parse the QR codes into the objects that could be added to the list of recipes. React made the most sense for this project by keeping up with the state for the many different form inputs. The process for creation is broken into two main parts. I first stored all of the form inputs in local storage and upon submission, I created the object that would be appended to the recipes array. That same array is processed through react to show all of your recipes that you have collected. To create the QR codes, I used an API that accepts a link. I created that link by appending the recipe object as a parameter to the /addRecipe/ route. This would add the recipe to the recipes array and update the state accordingly.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Optimizations
 
-### `npm test`
+I would like to make the states a bit easier to work with by using Redux to elevate the state as well as having a search function for finding recipes in your collection.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Lessons Learned:
 
-### `npm run build`
+I definitely got more comfortable with using (maybe abusing) local storage. It is a great way to get into the mindset of functional programming with immutable objects. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Examples:
+Take a look at these couple examples that I have in my own portfolio:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**DND Map Maker:** https://github.com/Hazelwize/dnd-map-maker
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**PlayerToo:** https://github.com/Hazelwize/player-two
 
-### `npm run eject`
+**Stitch-N-Loop API:** https://github.com/Hazelwize/stitch-and-loop-api
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
